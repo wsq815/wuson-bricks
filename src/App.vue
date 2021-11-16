@@ -1,4 +1,5 @@
 <template>
+  <hello-world></hello-world>
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
@@ -6,6 +7,18 @@
   <router-view/>
 </template>
 
+<script lang="ts">
+import { defineComponent, onMounted, getCurrentInstance } from 'vue'
+
+export default defineComponent({
+  name: 'App',
+  setup(){
+    onMounted(() => {
+      getCurrentInstance()?.appContext.config.globalProperties.$echo()
+    })
+  }
+})
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
