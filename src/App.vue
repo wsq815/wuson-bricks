@@ -10,6 +10,10 @@
 <script lang="ts">
 import { defineComponent, onMounted, getCurrentInstance } from 'vue'
 
+export interface TestProps{
+  name: string
+}
+
 export default defineComponent({
   name: 'App',
   setup(){
