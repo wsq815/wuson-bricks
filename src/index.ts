@@ -8,8 +8,8 @@ const components = [
 
 const install = (app: App) => {
     components.forEach(component => {
-        // app.component(component.name, component)
-        app.use(component)
+        app.component(component.name, component)
+        // app.use(component)
     })
 }
 
