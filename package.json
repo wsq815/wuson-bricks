@@ -1,24 +1,28 @@
 {
   "name": "wuson-bricks",
-  "version": "0.1.0",
-  "private": true,
-  "main": "dist/wuson-bricks.umd.js",
-  "module": "dist/wuson-bricks.esm.js",
-  "types": "dist/src/index.d.ts",
+  "version": "1.0.1",
+  "private": false,
+  "author": "Wuson Wu",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run clean && npm run build:esm && npm run build:umd",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
+    "test:watch": "vue-cli-service test:unit --watch",
+    "test": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint --max-warnings 0",
     "build:esm": "rollup --config build/rollup.esm.config.js",
     "build:umd": "rollup --config build/rollup.umd.config.js",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run lint && npm run test && npm run build"
   },
+  "main": "dist/wuson-bricks.umd.js",
+  "module": "dist/wuson-bricks.esm.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "core-js": "^3.6.5"
-  },
-  "peerDependencies": {
-    "vue": "^3.0.0"
+    "core-js": "^3.6.5",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.6",
@@ -29,7 +33,7 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.15",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
@@ -42,6 +46,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
+    "husky": "^7.0.4",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-css-only": "^3.1.0",
@@ -53,5 +58,10 @@
     "vue-jest": "^5.0.0-0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
-  }
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "license": "MIT",
+  "types": "dist/src/index.d.ts"
 }

@@ -1,23 +1,23 @@
 import { App } from 'vue'
 
-import LText  from './components/LText'
+import LText from './components/LText'
 
 const components = [
-    LText
+  LText
 ]
 
 const install = (app: App) => {
-    components.forEach(component => {
-        app.component(component.name, component)
-        // app.use(component)
-    })
+  components.forEach(component => {
+    app.component(component.name, component)
+    // app.use(component)
+  })
 }
 
 export {
-    LText,
-    install
+  LText,
+  install
 }
 
 export default {
-    install
+  install
 }

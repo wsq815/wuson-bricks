@@ -1,16 +1,21 @@
 <template>
-  <div class="hello">
-  eee  222222222222 
+  <div class="hello" style="color: red;">
+  {{text}}
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { add } from 'lodash-es'
 
 export default defineComponent({
   name: 'LText',
   props: {
-    msg: String
+    text: String
+  },
+  setup(){
+    add()
+    return {}
   }
 })
 </script>
