@@ -8,12 +8,12 @@
     "build": "npm run clean && npm run build:esm && npm run build:umd",
     "test:watch": "vue-cli-service test:unit --watch",
     "test": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint --max-warnings 0",
+    "lint": "vue-cli-service lint --max-warnings 5",
     "build:esm": "rollup --config build/rollup.esm.config.js",
     "build:umd": "rollup --config build/rollup.umd.config.js",
     "clean": "rimraf ./dist",
-    "prepare": "husky install",
-    "prepublishOnly": "npm run lint && npm run test && npm run build"
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "prepare": "husky install"
   },
   "main": "dist/wuson-bricks.umd.js",
   "module": "dist/wuson-bricks.esm.js",
