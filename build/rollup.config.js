@@ -2,6 +2,7 @@ import vue from 'rollup-plugin-vue'
 import css from 'rollup-plugin-css-only'
 import typescript from 'rollup-plugin-typescript2'
 import { nodeResolve } from "@rollup/plugin-node-resolve"
+
 import { name } from '../package.json'
 const file = type => `dist/${name}.${type}.js`
 const overrides = {
@@ -27,7 +28,8 @@ export default {
             tsconfigOverride: overrides
         }),
         vue(),
-        css({ output: 'bundle.css' })
+        css({ output: 'bundle.css' }),
+        
     ],
     // external: ['vue']
     external: (id) => {

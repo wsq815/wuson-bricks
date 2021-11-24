@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { add } from 'lodash-es'
+// import { add } from 'lodash-es'
 
 export default defineComponent({
   name: 'LText',
@@ -14,8 +14,13 @@ export default defineComponent({
     text: String
   },
   setup(){
-    add()
+    // add()
     return {}
   }
 })
 </script>
+<style scoped>
+.hello{
+  color: red;
+}
+</style>
